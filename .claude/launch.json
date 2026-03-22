@@ -3,15 +3,15 @@
   "configurations": [
     {
       "name": "nextjs-dev",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["next", "dev"],
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "npm", "run", "dev"],
       "port": 3001,
       "autoPort": true
     },
     {
       "name": "remotion-studio",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["remotion", "studio"],
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "npm", "run", "remotion"],
       "port": 3100
     }
   ]

@@ -10,9 +10,11 @@ import { RenderCommandBuilder } from "./RenderCommandBuilder";
 import { JsonConfigGenerator } from "./JsonConfigGenerator";
 import { CustomSkillsCreator } from "./CustomSkillsCreator";
 import { RoadmapGuide } from "./RoadmapGuide";
+import { PromptAssistant } from "./PromptAssistant";
 
 const tabs = [
   { id: "roadmap", label: "Roadmap", icon: "🗺" },
+  { id: "assistant", label: "Asistente", icon: "🎯" },
   { id: "config", label: "Config", icon: "⚙" },
   { id: "prompt", label: "Prompts", icon: "✏" },
   { id: "skills", label: "Skills", icon: "📚" },
@@ -58,6 +60,7 @@ export const DashboardShell: React.FC = () => {
       {/* Tab Content */}
       <div className="min-h-[400px]">
         {activeTab === "roadmap" && <RoadmapGuide />}
+        {activeTab === "assistant" && <PromptAssistant />}
         {activeTab === "config" && <VideoConfigPanel />}
         {activeTab === "prompt" && <PromptBuilder />}
         {activeTab === "skills" && <SkillsReference />}
