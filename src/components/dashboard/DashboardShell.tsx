@@ -11,15 +11,23 @@ import { JsonConfigGenerator } from "./JsonConfigGenerator";
 import { CustomSkillsCreator } from "./CustomSkillsCreator";
 import { RoadmapGuide } from "./RoadmapGuide";
 import { PromptAssistant } from "./PromptAssistant";
+import PromptExecutor from "./PromptExecutor";
+import RenderHistory from "./RenderHistory";
+import BatchRender from "./BatchRender";
+import CompositionsGallery from "./CompositionsGallery";
 
 const tabs = [
   { id: "roadmap", label: "Roadmap", icon: "🗺" },
+  { id: "executor", label: "Ejecutor", icon: "🚀" },
+  { id: "gallery", label: "Galeria", icon: "🎬" },
   { id: "assistant", label: "Asistente", icon: "🎯" },
   { id: "config", label: "Config", icon: "⚙" },
   { id: "prompt", label: "Prompts", icon: "✏" },
   { id: "skills", label: "Skills", icon: "📚" },
   { id: "templates", label: "Templates", icon: "📋" },
+  { id: "batch", label: "Batch", icon: "📦" },
   { id: "render", label: "Render", icon: "▶" },
+  { id: "history", label: "Historial", icon: "📊" },
   { id: "json", label: "JSON", icon: "{}" },
   { id: "custom", label: "Custom Skills", icon: "🔧" },
 ] as const;
@@ -60,6 +68,8 @@ export const DashboardShell: React.FC = () => {
       {/* Tab Content */}
       <div className="min-h-[400px]">
         {activeTab === "roadmap" && <RoadmapGuide />}
+        {activeTab === "executor" && <PromptExecutor />}
+        {activeTab === "gallery" && <CompositionsGallery />}
         {activeTab === "assistant" && <PromptAssistant />}
         {activeTab === "config" && <VideoConfigPanel />}
         {activeTab === "prompt" && <PromptBuilder />}
@@ -67,7 +77,9 @@ export const DashboardShell: React.FC = () => {
         {activeTab === "templates" && (
           <PresetTemplates onUseTemplate={handleUseTemplate} />
         )}
+        {activeTab === "batch" && <BatchRender />}
         {activeTab === "render" && <RenderCommandBuilder />}
+        {activeTab === "history" && <RenderHistory />}
         {activeTab === "json" && <JsonConfigGenerator />}
         {activeTab === "custom" && <CustomSkillsCreator />}
       </div>
